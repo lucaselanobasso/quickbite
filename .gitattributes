@@ -1,0 +1,22 @@
+# Normaliza finais de linha: LF no repositório, sempre.
+# Sem isso, scripts criados no Windows quebram dentro de containers Linux
+# com o erro "bad interpreter: /bin/bash^M".
+* text=auto eol=lf
+
+# Arquivos que NUNCA podem virar CRLF
+*.sh      text eol=lf
+*.bash    text eol=lf
+Dockerfile text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+
+# Scripts do Windows precisam de CRLF
+*.ps1     text eol=crlf
+*.cmd     text eol=crlf
+*.bat     text eol=crlf
+
+# Binários: não tocar
+*.png binary
+*.jpg binary
+*.ico binary
+*.pdf binary
